@@ -1,6 +1,13 @@
-import {calculate} from './components/calculator.js';
+import calculator from './components/calculator.js';
+import buttonEvents from './helpers/buttonEvents.js';
 
 // console.log(calculate(4,2, 'multiply')); //8
 
-calculate(4,2, 'divide');
+const initializeApp = () => {
+    buttonEvents ();
+    initialDisplay ();
+    setMathType ();
+};
+
+initializeApp ();
 
