@@ -1,4 +1,4 @@
-import {addNumber} from '../components/calculator.js'
+import { addNumber, setMathType, calculate } from '../components/calculator.js'
 
 const oneButton = document.getElementById('oneButton');
 const twoButton = document.getElementById('twoButton');
@@ -14,52 +14,81 @@ const subtractButton = document.getElementById('subtractButton');
 const multiplyButton = document.getElementById('multiplyButton');
 const divideButton = document.getElementById('divideButton');
 const equalsButton = document.getElementById('equalsButton');
+const clearButton = document.getElementById('clearButton');
 
-const addNumbberCaller = (e) => {
+const addNumberCaller = (e) => {
     addNumber(e.target.innerHTML);
 }
 
-const equalButtonEvent = (e) => {
-    
-}
-
 const oneButtonEvent = () => {
-    oneButton.addEventListener('click', addNumbberCaller);
+    oneButton.addEventListener('click', addNumberCaller);
 };
 
 const twoButtonEvent = () => {
-    twoButton.addEventListener('click', addNumbberCaller);
+    twoButton.addEventListener('click', addNumberCaller);
 };
 
 const threeButtonEvent = () => {
-    threeButton.addEventListener('click', addNumbberCaller);
+    threeButton.addEventListener('click', addNumberCaller);
 };
 
 const fourButtonEvent = () => {
-    fourButton.addEventListener('click', addNumbberCaller);
+    fourButton.addEventListener('click', addNumberCaller);
 };
 
 const fiveButtonEvent = () => {
-    fiveButton.addEventListener('click', addNumbberCaller);
+    fiveButton.addEventListener('click', addNumberCaller);
 };
 
 const sixButtonEvent = () => {
-    sixButton.addEventListener('click', addNumbberCaller);
+    sixButton.addEventListener('click', addNumberCaller);
 };
 
 const sevenButtonEvent = () => {
-    sevenButton.addEventListener('click', addNumbberCaller);
+    sevenButton.addEventListener('click', addNumberCaller);
 };
 
 const eightButtonEvent = () => {
-    eightButton.addEventListener('click', addNumbberCaller);
+    eightButton.addEventListener('click', addNumberCaller);
+};
+
+const nineButtonEvent = () => {
+    nineButton.addEventListener('click', addNumberCaller);
+};
+
+const zeroButtonEvent = () => {
+    zeroButton.addEventListener('click', addNumberCaller);
+};
+
+const addButtonEvent = () => {
+    addButton.addEventListener('click', () => {
+        setMathType('add');
+    })
+};
+
+const subtractButtonEvent = () => {
+    subtractButton.addEventListener('click', () => {
+        setMathType('subtract');
+    })
 };
 
 const divideButtonEvent = () => {
-    divideButton.addEventListener('click',() => {
+    divideButton.addEventListener('click', () => {
         setMathType('divide');
+    })
 };
 
+const multiplyButtonEvent = () => {
+    multiplyButton.addEventListener('click', () => {
+        setMathType('multiply');
+    })
+};
+
+const equalsButtonEvent = () => {
+    equalsButton.addEventListener('click', () => {
+        calculate();
+    })
+};
 
 const attachEvents = () => {
     oneButtonEvent();
@@ -70,6 +99,14 @@ const attachEvents = () => {
     sixButtonEvent();
     sevenButtonEvent();
     eightButtonEvent();
+    nineButtonEvent();
+    zeroButtonEvent();
+    addButtonEvent();
+    subtractButtonEvent();
+    divideButtonEvent();
+    multiplyButtonEvent();
+    equalsButtonEvent();
+    // clearButtonEvent();
 }
 
 export default attachEvents

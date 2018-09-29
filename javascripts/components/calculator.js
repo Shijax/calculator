@@ -54,8 +54,8 @@ const setMathType = (newMathType) => {
 
 export {
     calculate,
-    addNumber,
     setDisplay,
     initialDisplay,
-    setMathType
+    setMathType,
+    addNumber
 }
